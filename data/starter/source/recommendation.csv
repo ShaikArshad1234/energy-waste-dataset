@@ -1,0 +1,5 @@
+recommendation_id,plant_id,meter_id,machine_id,recommendation_type,rule_id,status,created_ts_utc,baseline_metric,baseline_value,baseline_unit,baseline_start_utc,baseline_end_utc,observed_value,expected_saving_kwh,expected_saving_kw,expected_saving_cost,currency,expected_saving_pct,related_maintenance_event_id
+REC-2026-000001,P02,MTR-P02-001,,SHIFT_PEAK_LOAD,REC-R3-PEAK,ACCEPTED,2026-07-09T06:00:00Z,peak_main_kw,351.935,kW,2026-07-06T06:00:00Z,2026-07-08T06:00:00Z,351.935,0,21.935,263.22,AED,6.2327,
+REC-2026-000002,P02,MTR-P02-002,MCH-P02-001,REDUCE_IDLE_LOAD,REC-R1-IDLE,IMPLEMENTED,2026-07-10T20:00:00Z,offshift_excess_kwh_per_day,79.3564,kWh/day,2026-07-05T20:00:00Z,2026-07-10T20:00:00Z,79.3564,2142.6228,,623.4208,AED,5.2885,
+REC-2026-000003,P01,MTR-P01-001,,SHIFT_PEAK_LOAD,REC-R3-PEAK,ACCEPTED,2026-07-12T00:45:00Z,peak_main_kw,263.514,kW,2026-07-09T05:45:00Z,2026-07-11T00:45:00Z,263.514,0,28.514,10578.694,INR,10.8207,
+REC-2026-000004,P02,MTR-P02-003,MCH-P02-002,INSPECT_ENERGY_INTENSITY,REC-R2-INTENSITY,ACCEPTED,2026-07-14T20:00:00Z,kwh_per_unit,0.75,kWh/unit,2026-06-30T20:00:00Z,2026-07-04T20:00:00Z,1.0417,1854.1363,,865.1224,AED,9.7955,

@@ -1,0 +1,1 @@
+python -m energygen generate --out data/full --seed 20261022 --plants 2 --meters 20 --days 90 --batches 2000 --start-date 2026-07-01

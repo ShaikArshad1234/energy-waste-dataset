@@ -1,0 +1,107 @@
+{
+ "detection": {
+  "HIGH_IDLE_CONSUMPTION": {
+   "tp": 131,
+   "fp": 0,
+   "fn": 3,
+   "precision": 1.0,
+   "recall": 0.9776,
+   "f1": 0.9887,
+   "granularity": "machine-day"
+  },
+  "INTENSITY_SHIFT": {
+   "tp": 10,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "granularity": "machine-week (>=4 degraded days)"
+  },
+  "KW_KWH_CONFUSION": {
+   "tp": 35,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "granularity": "record"
+  },
+  "MACHINE_OUTSIDE_HIERARCHY": {
+   "tp": 26,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "granularity": "record"
+  },
+  "METER_GAP": {
+   "tp": 71,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "granularity": "gap episode"
+  },
+  "METER_TOTAL_MISMATCH": {
+   "tp": 9,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "granularity": "record"
+  },
+  "PEAK_DEMAND_SPIKE": {
+   "tp": 46,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "granularity": "exceedance episode"
+  },
+  "READING_DUPLICATE": {
+   "tp": 69,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "granularity": "record"
+  },
+  "TARIFF_TIMEZONE_MISMATCH": {
+   "tp": 9,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "granularity": "tariff row"
+  }
+ },
+ "recommendations": {
+  "idle": {
+   "tp": 4,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0
+  },
+  "intensity": {
+   "tp": 4,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0
+  },
+  "intensity_saving_median_abs_pct_error": 31.4,
+  "peak_saving_kw_median_abs_pct_error": 0.0,
+  "recommendations_total": 10,
+  "idle_saving_median_abs_pct_error": 16.2
+ }
+}

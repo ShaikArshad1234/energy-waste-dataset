@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/claude/energy-waste-dataset
+configfile: pytest.ini
+testpaths: tests
+plugins: platformdirs-4.13.0, anyio-4.15.1
+collected 48 items
+
+tests/test_cli.py ...                                                    [  6%]
+tests/test_dataset.py .................                                  [ 41%]
+tests/test_derived_and_domain.py ................                        [ 75%]
+tests/test_validation.py ............                                    [100%]
+
+============================= 48 passed in 33.90s ==============================

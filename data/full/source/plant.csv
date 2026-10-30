@@ -1,0 +1,3 @@
+plant_id,plant_name,country_code,timezone_name,utc_offset_minutes,currency,contract_demand_kw,status,effective_from
+P01,Pune Assembly Plant,IN,Asia/Kolkata,330,INR,610,ACTIVE,2025-07-01
+P02,Dubai Fabrication Plant,AE,Asia/Dubai,240,AED,835,ACTIVE,2025-07-01

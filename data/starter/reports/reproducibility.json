@@ -1,0 +1,106 @@
+{
+ "seed": 20261022,
+ "parameters": {
+  "seed": 20261022,
+  "plants": 2,
+  "meters": 8,
+  "days": 14,
+  "batches": 80,
+  "start_date": "2026-07-01",
+  "interval_minutes": 15
+ },
+ "identical": true,
+ "files_compared": 22,
+ "differences": [],
+ "run_1": {
+  "derived/batch_energy_summary.csv": {
+   "rows": 151,
+   "sha256": "7a3f3f7b4a048d732b9eb8a6153d501e1dc7b0d8973f4ed31a37b02067eb7024"
+  },
+  "derived/data_quality_findings.csv": {
+   "rows": 43,
+   "sha256": "4cd5ad9febd1cdc5cfcf59556bb38c573f7becc61d124d8305a95e6c84557180"
+  },
+  "derived/interval_cost.csv": {
+   "rows": 10546,
+   "sha256": "6384decdb7fe6350fe96a3622cc198bac8b4ab43facf2fc8ac9918efbb69a1f1"
+  },
+  "derived/meter_daily_reconciliation.csv": {
+   "rows": 112,
+   "sha256": "b8741dbc32a325028a2378b9911189b554f3b8a4a9f8478959d851044a5118a8"
+  },
+  "derived/peak_demand_daily.csv": {
+   "rows": 76,
+   "sha256": "a44b48b9b440c2d37702ad3d94291c5a3397b4233f708eb0148e5149b2777ba8"
+  },
+  "ground_truth/ground_truth.csv": {
+   "rows": 37,
+   "sha256": "e5904b3f99e8e10fe3f88c1fbe8d63a17a829c938a1070de14a285f827a73d52"
+  },
+  "source/batch_machine.csv": {
+   "rows": 151,
+   "sha256": "d11e97eda478bc31c66ed0f8ff3212604b6b519d18025964bf3427555ccb3370"
+  },
+  "source/batch_status_event.csv": {
+   "rows": 240,
+   "sha256": "805ea32f537cf91cd17713e4115ff5078543b87ace2747fe4d60ec9c226f071a"
+  },
+  "source/energy_reading.csv": {
+   "rows": 10550,
+   "sha256": "44677d247eefa9494857505c2f0f3438c909e0beb8786d03269b114a18866e3b"
+  },
+  "source/machine.csv": {
+   "rows": 6,
+   "sha256": "2d46e0baef517f164277c56cc818d71aa2fa0a48154efef5184d352d4c90383c"
+  },
+  "source/machine_state_event.csv": {
+   "rows": 301,
+   "sha256": "a92ff28b925421bd5cf0c5317c49106419ba4c2329598ea7a0192b4e58bd7403"
+  },
+  "source/maintenance_event.csv": {
+   "rows": 6,
+   "sha256": "1c97fb99188237398d313c8f0839041aa06c1f9b607f87dda3b761d48ec14e4a"
+  },
+  "source/meter.csv": {
+   "rows": 8,
+   "sha256": "901d3f89dcb1fa2e065cdf16056710badac8e83237013bcf6529789352d1880e"
+  },
+  "source/meter_daily_total.csv": {
+   "rows": 112,
+   "sha256": "82a0e4a5148a5373ef31b36b86032b7b7c5464d4e56b3dfaab6a1b57895c6880"
+  },
+  "source/meter_machine_assignment.csv": {
+   "rows": 6,
+   "sha256": "7b25b218b1205e62d852e30dd243cf2a526038ab5e890002e2557481c33978da"
+  },
+  "source/plant.csv": {
+   "rows": 2,
+   "sha256": "0dcbbc85bce5c64c46489d83ee03d5374fae1dc5c0a8f698d4fae4a4a14d62f9"
+  },
+  "source/production_batch.csv": {
+   "rows": 80,
+   "sha256": "846ac61c05167b4ee27f2fd8257056d249165849f4e46bf32529efa0858df0a6"
+  },
+  "source/recommendation.csv": {
+   "rows": 4,
+   "sha256": "69e6a2d7ec2020852e9f417d6d68d12faedb60880354647e9bcf1c315075805d"
+  },
+  "source/recommendation_status_event.csv": {
+   "rows": 9,
+   "sha256": "511a9343f68a0f4555f8263ccbf7c82d111e1d756b38634859730654c5c980d6"
+  },
+  "source/shift.csv": {
+   "rows": 86,
+   "sha256": "137b574532348258e52b3fad1534dafba9051a34143c6fa3ab29aa4498aa4cc8"
+  },
+  "source/tariff.csv": {
+   "rows": 36,
+   "sha256": "acc9b8c2b97a874e0e76da74ec6608b0f49b32dcaf30c29aef23d00ceca1b6a8"
+  },
+  "source/weather_observation.csv": {
+   "rows": 675,
+   "sha256": "d5346c05ca42edc3c67edf1258a2d5d8a1bfbc58a475733f474296c6459dec4a"
+  }
+ },
+ "run_2_matches": true
+}

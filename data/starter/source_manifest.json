@@ -1,0 +1,270 @@
+{
+ "files": [
+  {
+   "bytes": 14309,
+   "path": "derived/batch_energy_summary.csv",
+   "rows": 151,
+   "sha256": "7a3f3f7b4a048d732b9eb8a6153d501e1dc7b0d8973f4ed31a37b02067eb7024"
+  },
+  {
+   "bytes": 3208,
+   "path": "derived/data_quality_findings.csv",
+   "rows": 43,
+   "sha256": "4cd5ad9febd1cdc5cfcf59556bb38c573f7becc61d124d8305a95e6c84557180"
+  },
+  {
+   "bytes": 1156180,
+   "path": "derived/interval_cost.csv",
+   "rows": 10546,
+   "sha256": "6384decdb7fe6350fe96a3622cc198bac8b4ab43facf2fc8ac9918efbb69a1f1"
+  },
+  {
+   "bytes": 6991,
+   "path": "derived/meter_daily_reconciliation.csv",
+   "rows": 112,
+   "sha256": "b8741dbc32a325028a2378b9911189b554f3b8a4a9f8478959d851044a5118a8"
+  },
+  {
+   "bytes": 4650,
+   "path": "derived/peak_demand_daily.csv",
+   "rows": 76,
+   "sha256": "a44b48b9b440c2d37702ad3d94291c5a3397b4233f708eb0148e5149b2777ba8"
+  },
+  {
+   "bytes": 133,
+   "path": "generator_command.txt",
+   "sha256": "e2829c6c6fc40edbc2528784676b153f2f933c46623dd49c7250c06f81047916"
+  },
+  {
+   "bytes": 8864,
+   "path": "ground_truth/ground_truth.csv",
+   "rows": 37,
+   "sha256": "e5904b3f99e8e10fe3f88c1fbe8d63a17a829c938a1070de14a285f827a73d52"
+  },
+  {
+   "bytes": 18987,
+   "path": "ground_truth/ground_truth.json",
+   "sha256": "7ff366c36d6e74538025971ca7dfeeecdb9aa4bc2652531a70d6a367e3581717"
+  },
+  {
+   "bytes": 18575,
+   "path": "json/batch_machine.json",
+   "sha256": "6acf867146793d9f1a77b2593df210fd5d44dc55a941a62d28937ae61560e7e3"
+  },
+  {
+   "bytes": 34002,
+   "path": "json/batch_status_event.json",
+   "sha256": "468e8ffbc31df6127c0c98178beafdbeebb4fbe4420d653cba8ca7486266b2f8"
+  },
+  {
+   "bytes": 2549105,
+   "path": "json/energy_reading.json",
+   "sha256": "c47c347a6e7d3c1c785a0bbd004afaea5a0e987b04db701b053e97feb70289df"
+  },
+  {
+   "bytes": 1522,
+   "path": "json/machine.json",
+   "sha256": "895566fa23684d10d337774f195450095e8c8bce7c7e5ad41fd42345d9af6895"
+  },
+  {
+   "bytes": 52804,
+   "path": "json/machine_state_event.json",
+   "sha256": "5779abffaf78473fc603968b48c6461a33b506ce2faefda1d4cc34529cbc439e"
+  },
+  {
+   "bytes": 1458,
+   "path": "json/maintenance_event.json",
+   "sha256": "a21bf844842d2962df581b360cd36c88db4c119c208af0997416080552b23b15"
+  },
+  {
+   "bytes": 2243,
+   "path": "json/meter.json",
+   "sha256": "bf6f19deb203042ae7f187b93b036d94f588a0726e94250fe3d9b8d8d1edda1e"
+  },
+  {
+   "bytes": 12996,
+   "path": "json/meter_daily_total.json",
+   "sha256": "7e4b086055a1ce500f0c8d085dcf4156eb48caa13771c0617af0cc835a509653"
+  },
+  {
+   "bytes": 944,
+   "path": "json/meter_machine_assignment.json",
+   "sha256": "6922fceedaa0e57a959a100897078ea4e7286127728a602696b6f0f09cf3c13e"
+  },
+  {
+   "bytes": 452,
+   "path": "json/plant.json",
+   "sha256": "0a6c70fa358df0fd0a43270f31413fdd67b723471117d417dde1fbddaff1a71b"
+  },
+  {
+   "bytes": 19625,
+   "path": "json/production_batch.json",
+   "sha256": "c15563aef4ebb1a788418d9158718ca54f5f066a664603dfb0e52bf3f1f6ecd6"
+  },
+  {
+   "bytes": 2420,
+   "path": "json/recommendation.json",
+   "sha256": "ecae3ee887ccbc431c8caf99570ac6ac3c1e8e3a41453d12d7a17ae196c5e7b3"
+  },
+  {
+   "bytes": 1312,
+   "path": "json/recommendation_status_event.json",
+   "sha256": "223e2feedcf31f91432ccd5fe943f223a1615184cae1efb62e584a65fe525a7d"
+  },
+  {
+   "bytes": 15654,
+   "path": "json/shift.json",
+   "sha256": "bafe797a3feb53f1a9c0e6470991738da607aa7d5393c4bf671f795e9d198204"
+  },
+  {
+   "bytes": 12973,
+   "path": "json/tariff.json",
+   "sha256": "76043f6f5fd3396cfa9d8c77340c29acf7aa2888e5fd4fbfba1e3b803ecbb482"
+  },
+  {
+   "bytes": 115173,
+   "path": "json/weather_observation.json",
+   "sha256": "8e0aeb74ccc45eacc2e292087420547e54b59ab6f6d3e589c52b870a66df82e9"
+  },
+  {
+   "bytes": 8505,
+   "path": "source/batch_machine.csv",
+   "rows": 151,
+   "sha256": "d11e97eda478bc31c66ed0f8ff3212604b6b519d18025964bf3427555ccb3370"
+  },
+  {
+   "bytes": 15814,
+   "path": "source/batch_status_event.csv",
+   "rows": 240,
+   "sha256": "805ea32f537cf91cd17713e4115ff5078543b87ace2747fe4d60ec9c226f071a"
+  },
+  {
+   "bytes": 1051107,
+   "path": "source/energy_reading.csv",
+   "rows": 10550,
+   "sha256": "44677d247eefa9494857505c2f0f3438c909e0beb8786d03269b114a18866e3b"
+  },
+  {
+   "bytes": 623,
+   "path": "source/machine.csv",
+   "rows": 6,
+   "sha256": "2d46e0baef517f164277c56cc818d71aa2fa0a48154efef5184d352d4c90383c"
+  },
+  {
+   "bytes": 25476,
+   "path": "source/machine_state_event.csv",
+   "rows": 301,
+   "sha256": "a92ff28b925421bd5cf0c5317c49106419ba4c2329598ea7a0192b4e58bd7403"
+  },
+  {
+   "bytes": 727,
+   "path": "source/maintenance_event.csv",
+   "rows": 6,
+   "sha256": "1c97fb99188237398d313c8f0839041aa06c1f9b607f87dda3b761d48ec14e4a"
+  },
+  {
+   "bytes": 851,
+   "path": "source/meter.csv",
+   "rows": 8,
+   "sha256": "901d3f89dcb1fa2e065cdf16056710badac8e83237013bcf6529789352d1880e"
+  },
+  {
+   "bytes": 6316,
+   "path": "source/meter_daily_total.csv",
+   "rows": 112,
+   "sha256": "82a0e4a5148a5373ef31b36b86032b7b7c5464d4e56b3dfaab6a1b57895c6880"
+  },
+  {
+   "bytes": 441,
+   "path": "source/meter_machine_assignment.csv",
+   "rows": 6,
+   "sha256": "7b25b218b1205e62d852e30dd243cf2a526038ab5e890002e2557481c33978da"
+  },
+  {
+   "bytes": 258,
+   "path": "source/plant.csv",
+   "rows": 2,
+   "sha256": "0dcbbc85bce5c64c46489d83ee03d5374fae1dc5c0a8f698d4fae4a4a14d62f9"
+  },
+  {
+   "bytes": 8683,
+   "path": "source/production_batch.csv",
+   "rows": 80,
+   "sha256": "846ac61c05167b4ee27f2fd8257056d249165849f4e46bf32529efa0858df0a6"
+  },
+  {
+   "bytes": 1157,
+   "path": "source/recommendation.csv",
+   "rows": 4,
+   "sha256": "69e6a2d7ec2020852e9f417d6d68d12faedb60880354647e9bcf1c315075805d"
+  },
+  {
+   "bytes": 624,
+   "path": "source/recommendation_status_event.csv",
+   "rows": 9,
+   "sha256": "511a9343f68a0f4555f8263ccbf7c82d111e1d756b38634859730654c5c980d6"
+  },
+  {
+   "bytes": 6952,
+   "path": "source/shift.csv",
+   "rows": 86,
+   "sha256": "137b574532348258e52b3fad1534dafba9051a34143c6fa3ab29aa4498aa4cc8"
+  },
+  {
+   "bytes": 3809,
+   "path": "source/tariff.csv",
+   "rows": 36,
+   "sha256": "acc9b8c2b97a874e0e76da74ec6608b0f49b32dcaf30c29aef23d00ceca1b6a8"
+  },
+  {
+   "bytes": 42353,
+   "path": "source/weather_observation.csv",
+   "rows": 675,
+   "sha256": "d5346c05ca42edc3c67edf1258a2d5d8a1bfbc58a475733f474296c6459dec4a"
+  },
+  {
+   "bytes": 9246,
+   "path": "sql/schema.sql",
+   "sha256": "d0c94e2f81153f4d84af1b95fa024d8f2edea781525bbfc4b7db54f852a22e0d"
+  },
+  {
+   "bytes": 1320707,
+   "path": "sql/seed.sql",
+   "sha256": "f3059262bd9c71a78532d85ba4fbfa5dbf03b8808a8c92ead288415b510fc004"
+  }
+ ],
+ "generator": {
+  "command": "python -m energygen generate --out data/starter --seed 20261022 --plants 2 --meters 8 --days 14 --batches 80 --start-date 2026-07-01",
+  "name": "energygen",
+  "parameters": {
+   "batches": 80,
+   "days": 14,
+   "interval_minutes": 15,
+   "meters": 8,
+   "plants": 2,
+   "seed": 20261022,
+   "start_date": "2026-07-01"
+  },
+  "rng": "Mersenne Twister random() via sha256(seed:label) derived streams (stable across Python versions)",
+  "version": "1.0.0"
+ },
+ "ground_truth": {
+  "files": [
+   "ground_truth/ground_truth.csv",
+   "ground_truth/ground_truth.json"
+  ],
+  "note": "never read by generator derived tables or detectors; used only by validate/evaluate",
+  "rows": 37
+ },
+ "json_export_skipped_for_size": [],
+ "provenance": {
+  "external_data_used": false,
+  "fields_discarded": [],
+  "license": "MIT (code and generated data); no third-party data, so no attribution or terms apply",
+  "personal_or_confidential_data": false,
+  "public_reference_data": "none used; table design was inspired by common smart-meter / MES schemas only",
+  "retrieval_date": null,
+  "transformations": "n/a (no external source)",
+  "type": "fully synthetic"
+ }
+}

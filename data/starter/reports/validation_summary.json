@@ -1,0 +1,1380 @@
+{
+ "overall": "PASS",
+ "checks_total": 137,
+ "checks_passed": 137,
+ "failed": [],
+ "labelled_violations_total": 31,
+ "unexplained_violations_total": 0,
+ "checks": [
+  {
+   "check": "plant: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "plant: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "plant: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "plant: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "plant: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter_machine_assignment: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter_machine_assignment: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter_machine_assignment: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter_machine_assignment: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter_machine_assignment: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "shift: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "shift: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "shift: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "shift: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "shift: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "tariff: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "tariff: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "tariff: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "tariff: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "tariff: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "weather_observation: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "weather_observation: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "weather_observation: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "weather_observation: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "weather_observation: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "production_batch: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "production_batch: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "production_batch: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "production_batch: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "production_batch: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch_machine: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch_machine: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch_machine: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch_machine: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch_machine: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch_status_event: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch_status_event: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch_status_event: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch_status_event: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch_status_event: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "energy_reading: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "energy_reading: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "energy_reading: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "energy_reading: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "energy_reading: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter_daily_total: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter_daily_total: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter_daily_total: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter_daily_total: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter_daily_total: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine_state_event: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine_state_event: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine_state_event: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine_state_event: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine_state_event: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "maintenance_event: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "maintenance_event: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "maintenance_event: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "maintenance_event: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "maintenance_event: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation_status_event: required fields present",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation_status_event: data types",
+   "group": "schema",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation_status_event: allowed values (enums)",
+   "group": "enum",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation_status_event: id pattern",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation_status_event: primary key unique",
+   "group": "pk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK meter.plant_id -> plant.plant_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK meter.parent_meter_id -> meter.meter_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK machine.plant_id -> plant.plant_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK meter_machine_assignment.meter_id -> meter.meter_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK meter_machine_assignment.machine_id -> machine.machine_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK shift.plant_id -> plant.plant_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK tariff.plant_id -> plant.plant_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK weather_observation.plant_id -> plant.plant_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK production_batch.plant_id -> plant.plant_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK production_batch.shift_id -> shift.shift_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK batch_machine.batch_id -> production_batch.batch_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK batch_machine.machine_id -> machine.machine_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK batch_status_event.batch_id -> production_batch.batch_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK energy_reading.meter_id -> meter.meter_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK energy_reading.machine_id -> machine.machine_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK meter_daily_total.meter_id -> meter.meter_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK machine_state_event.machine_id -> machine.machine_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK machine_state_event.batch_id -> production_batch.batch_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK maintenance_event.machine_id -> machine.machine_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK recommendation.plant_id -> plant.plant_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK recommendation.meter_id -> meter.meter_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK recommendation.machine_id -> machine.machine_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK recommendation.related_maintenance_event_id -> maintenance_event.maintenance_event_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "FK recommendation_status_event.recommendation_id -> recommendation.recommendation_id",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter hierarchy: SUB -> MAIN of same plant, MAIN has no parent",
+   "group": "hierarchy",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "exactly one MAIN meter per plant",
+   "group": "hierarchy",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "assignment: SUB meter, same plant, effective_from <= effective_to",
+   "group": "hierarchy",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "assignment: every machine has exactly one open assignment; no SUB meter shared",
+   "group": "hierarchy",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "energy_reading: no duplicate reading_id (extra deliveries)",
+   "group": "duplicate",
+   "violations": 4,
+   "labelled_by_ground_truth": 4,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "energy_reading: machine attribution inside meter hierarchy",
+   "group": "hierarchy",
+   "violations": 2,
+   "labelled_by_ground_truth": 2,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "energy_reading: kWh = kW x 0.25 (kW/kWh not confused)",
+   "group": "arithmetic",
+   "violations": 2,
+   "labelled_by_ground_truth": 2,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "energy_reading: 15-minute grid and id matches timestamp",
+   "group": "id",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "energy_reading: re-deliveries carry identical values",
+   "group": "duplicate",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meter totals: register = sum of intervals (gap days explained by missing intervals)",
+   "group": "reconciliation",
+   "violations": 2,
+   "labelled_by_ground_truth": 2,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "meters: no missing 15-minute intervals",
+   "group": "completeness",
+   "violations": 12,
+   "labelled_by_ground_truth": 12,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "cost table energy = cleaned interval energy (no rows lost)",
+   "group": "reconciliation",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "MAIN kW >= sum of SUB kW (every interval with complete children)",
+   "group": "reconciliation",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "interval cost = energy x rate and a tariff window was found",
+   "group": "reconciliation",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "intensity = energy / produced units",
+   "group": "reconciliation",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "cost: tariff interval chosen by an independent plant-local-time scan (sampled)",
+   "group": "reconciliation",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "tariff timezone = plant timezone",
+   "group": "tariff",
+   "violations": 9,
+   "labelled_by_ground_truth": 9,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "tariff: effective dates ordered, rates > 0",
+   "group": "date-order",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "tariff windows tile the 24 hours exactly (no gap/overlap)",
+   "group": "tariff",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "tariff versions do not overlap per plant",
+   "group": "tariff",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "shift: start < end",
+   "group": "date-order",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch: start<end, grid, 0<produced<=planned, starts inside a staffed shift of its plant, machines in same plant",
+   "group": "date-order",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch: a machine never runs two batches at once",
+   "group": "lifecycle",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch: every batch has >= 1 machine",
+   "group": "fk",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch lifecycle PLANNED->RUNNING->COMPLETED|ABORTED, seq and time ordered",
+   "group": "lifecycle",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "batch final status = last lifecycle event; RUNNING event = batch start",
+   "group": "lifecycle",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "maintenance lifecycle SCHEDULED->IN_PROGRESS->COMPLETED | CANCELLED",
+   "group": "lifecycle",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation lifecycle OPEN->ACCEPTED|REJECTED, ACCEPTED->IMPLEMENTED",
+   "group": "lifecycle",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation.status = last lifecycle event",
+   "group": "lifecycle",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation: first event at created_ts",
+   "group": "lifecycle",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "recommendation: measurable baseline (>0, ordered period) and non-negative expected saving",
+   "group": "recommendation",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "machine state history: contiguous, non-overlapping, RUN <=> batch_id",
+   "group": "lifecycle",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  },
+  {
+   "check": "plant: effective_from <= first reading date",
+   "group": "date-order",
+   "violations": 0,
+   "labelled_by_ground_truth": 0,
+   "unexplained": 0,
+   "status": "PASS",
+   "sample_unexplained": [],
+   "note": ""
+  }
+ ]
+}

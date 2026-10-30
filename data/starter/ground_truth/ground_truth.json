@@ -1,0 +1,719 @@
+[
+ {
+  "details": {
+   "idle_kw": 4.4,
+   "intervals": 24,
+   "standby_kw": 0.6
+  },
+  "end_ts_utc": "2026-07-06T00:30:00Z",
+  "entity_id": "MCH-P01-001",
+  "entity_type": "machine",
+  "expected_decision": "RECOMMEND_SHUTDOWN_OFF_SHIFT",
+  "issue_type": "HIGH_IDLE_CONSUMPTION",
+  "machine_id": "MCH-P01-001",
+  "magnitude": "22.664",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-002",
+  "plant_id": "P01",
+  "rule_id": "R-IDLE-01",
+  "start_ts_utc": "2026-07-05T18:30:00Z",
+  "truth_id": "GT-000001"
+ },
+ {
+  "details": {
+   "idle_kw": 31.8,
+   "intervals": 24,
+   "standby_kw": 1.0
+  },
+  "end_ts_utc": "2026-07-06T02:00:00Z",
+  "entity_id": "MCH-P02-001",
+  "entity_type": "machine",
+  "expected_decision": "RECOMMEND_SHUTDOWN_OFF_SHIFT",
+  "issue_type": "HIGH_IDLE_CONSUMPTION",
+  "machine_id": "MCH-P02-001",
+  "magnitude": "183.613",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-002",
+  "plant_id": "P02",
+  "rule_id": "R-IDLE-01",
+  "start_ts_utc": "2026-07-05T20:00:00Z",
+  "truth_id": "GT-000002"
+ },
+ {
+  "details": {
+   "idle_kw": 4.4,
+   "intervals": 32,
+   "standby_kw": 0.6
+  },
+  "end_ts_utc": "2026-07-10T00:30:00Z",
+  "entity_id": "MCH-P01-001",
+  "entity_type": "machine",
+  "expected_decision": "RECOMMEND_SHUTDOWN_OFF_SHIFT",
+  "issue_type": "HIGH_IDLE_CONSUMPTION",
+  "machine_id": "MCH-P01-001",
+  "magnitude": "30.684",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-002",
+  "plant_id": "P01",
+  "rule_id": "R-IDLE-01",
+  "start_ts_utc": "2026-07-09T16:30:00Z",
+  "truth_id": "GT-000003"
+ },
+ {
+  "details": {
+   "idle_kw": 31.8,
+   "intervals": 32,
+   "standby_kw": 1.0
+  },
+  "end_ts_utc": "2026-07-10T02:00:00Z",
+  "entity_id": "MCH-P02-001",
+  "entity_type": "machine",
+  "expected_decision": "RECOMMEND_SHUTDOWN_OFF_SHIFT",
+  "issue_type": "HIGH_IDLE_CONSUMPTION",
+  "machine_id": "MCH-P02-001",
+  "magnitude": "241.335",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-002",
+  "plant_id": "P02",
+  "rule_id": "R-IDLE-01",
+  "start_ts_utc": "2026-07-09T18:00:00Z",
+  "truth_id": "GT-000004"
+ },
+ {
+  "details": {
+   "idle_kw": 4.4,
+   "intervals": 8,
+   "standby_kw": 0.6
+  },
+  "end_ts_utc": "2026-07-10T18:30:00Z",
+  "entity_id": "MCH-P01-001",
+  "entity_type": "machine",
+  "expected_decision": "RECOMMEND_SHUTDOWN_OFF_SHIFT",
+  "issue_type": "HIGH_IDLE_CONSUMPTION",
+  "machine_id": "MCH-P01-001",
+  "magnitude": "7.534",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-002",
+  "plant_id": "P01",
+  "rule_id": "R-IDLE-01",
+  "start_ts_utc": "2026-07-10T16:30:00Z",
+  "truth_id": "GT-000005"
+ },
+ {
+  "details": {
+   "idle_kw": 31.8,
+   "intervals": 8,
+   "standby_kw": 1.0
+  },
+  "end_ts_utc": "2026-07-10T20:00:00Z",
+  "entity_id": "MCH-P02-001",
+  "entity_type": "machine",
+  "expected_decision": "RECOMMEND_SHUTDOWN_OFF_SHIFT",
+  "issue_type": "HIGH_IDLE_CONSUMPTION",
+  "machine_id": "MCH-P02-001",
+  "magnitude": "61.913",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-002",
+  "plant_id": "P02",
+  "rule_id": "R-IDLE-01",
+  "start_ts_utc": "2026-07-10T18:00:00Z",
+  "truth_id": "GT-000006"
+ },
+ {
+  "details": {
+   "maintenance_start_utc": "2026-07-11T04:00:00Z",
+   "multiplier": 1.36
+  },
+  "end_ts_utc": "2026-07-11T11:15:00Z",
+  "entity_id": "MCH-P02-002",
+  "entity_type": "machine",
+  "expected_decision": "RECOMMEND_MAINTENANCE_INSPECTION",
+  "issue_type": "INTENSITY_SHIFT",
+  "machine_id": "MCH-P02-002",
+  "magnitude": "707.728",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-003",
+  "plant_id": "P02",
+  "rule_id": "R-INT-01",
+  "start_ts_utc": "2026-07-07T20:00:00Z",
+  "truth_id": "GT-000007"
+ },
+ {
+  "details": {
+   "maintenance_start_utc": "2026-07-12T02:30:00Z",
+   "multiplier": 1.203
+  },
+  "end_ts_utc": "2026-07-12T10:30:00Z",
+  "entity_id": "MCH-P01-002",
+  "entity_type": "machine",
+  "expected_decision": "RECOMMEND_MAINTENANCE_INSPECTION",
+  "issue_type": "INTENSITY_SHIFT",
+  "machine_id": "MCH-P01-002",
+  "magnitude": "218.579",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-003",
+  "plant_id": "P01",
+  "rule_id": "R-INT-01",
+  "start_ts_utc": "2026-07-08T18:30:00Z",
+  "truth_id": "GT-000008"
+ },
+ {
+  "details": {
+   "contract_demand_kw": 330.0,
+   "intervals": 1,
+   "max_kw": 341.535
+  },
+  "end_ts_utc": "2026-07-06T06:15:00Z",
+  "entity_id": "MTR-P02-001",
+  "entity_type": "meter",
+  "expected_decision": "RECOMMEND_STAGGER_STARTS",
+  "issue_type": "PEAK_DEMAND_SPIKE",
+  "machine_id": "",
+  "magnitude": "11.535",
+  "magnitude_unit": "kW",
+  "meter_id": "MTR-P02-001",
+  "plant_id": "P02",
+  "rule_id": "R-PEAK-01",
+  "start_ts_utc": "2026-07-06T06:00:00Z",
+  "truth_id": "GT-000009"
+ },
+ {
+  "details": {
+   "contract_demand_kw": 330.0,
+   "intervals": 1,
+   "max_kw": 351.935
+  },
+  "end_ts_utc": "2026-07-06T09:30:00Z",
+  "entity_id": "MTR-P02-001",
+  "entity_type": "meter",
+  "expected_decision": "RECOMMEND_STAGGER_STARTS",
+  "issue_type": "PEAK_DEMAND_SPIKE",
+  "machine_id": "",
+  "magnitude": "21.935",
+  "magnitude_unit": "kW",
+  "meter_id": "MTR-P02-001",
+  "plant_id": "P02",
+  "rule_id": "R-PEAK-01",
+  "start_ts_utc": "2026-07-06T09:15:00Z",
+  "truth_id": "GT-000010"
+ },
+ {
+  "details": {
+   "contract_demand_kw": 330.0,
+   "intervals": 1,
+   "max_kw": 350.934
+  },
+  "end_ts_utc": "2026-07-08T06:00:00Z",
+  "entity_id": "MTR-P02-001",
+  "entity_type": "meter",
+  "expected_decision": "RECOMMEND_STAGGER_STARTS",
+  "issue_type": "PEAK_DEMAND_SPIKE",
+  "machine_id": "",
+  "magnitude": "20.934",
+  "magnitude_unit": "kW",
+  "meter_id": "MTR-P02-001",
+  "plant_id": "P02",
+  "rule_id": "R-PEAK-01",
+  "start_ts_utc": "2026-07-08T05:45:00Z",
+  "truth_id": "GT-000011"
+ },
+ {
+  "details": {
+   "contract_demand_kw": 235.0,
+   "intervals": 1,
+   "max_kw": 254.919
+  },
+  "end_ts_utc": "2026-07-09T06:00:00Z",
+  "entity_id": "MTR-P01-001",
+  "entity_type": "meter",
+  "expected_decision": "RECOMMEND_STAGGER_STARTS",
+  "issue_type": "PEAK_DEMAND_SPIKE",
+  "machine_id": "",
+  "magnitude": "19.919",
+  "magnitude_unit": "kW",
+  "meter_id": "MTR-P01-001",
+  "plant_id": "P01",
+  "rule_id": "R-PEAK-01",
+  "start_ts_utc": "2026-07-09T05:45:00Z",
+  "truth_id": "GT-000012"
+ },
+ {
+  "details": {
+   "contract_demand_kw": 235.0,
+   "intervals": 1,
+   "max_kw": 263.514
+  },
+  "end_ts_utc": "2026-07-10T02:30:00Z",
+  "entity_id": "MTR-P01-001",
+  "entity_type": "meter",
+  "expected_decision": "RECOMMEND_STAGGER_STARTS",
+  "issue_type": "PEAK_DEMAND_SPIKE",
+  "machine_id": "",
+  "magnitude": "28.514",
+  "magnitude_unit": "kW",
+  "meter_id": "MTR-P01-001",
+  "plant_id": "P01",
+  "rule_id": "R-PEAK-01",
+  "start_ts_utc": "2026-07-10T02:15:00Z",
+  "truth_id": "GT-000013"
+ },
+ {
+  "details": {
+   "contract_demand_kw": 235.0,
+   "intervals": 1,
+   "max_kw": 260.027
+  },
+  "end_ts_utc": "2026-07-11T00:45:00Z",
+  "entity_id": "MTR-P01-001",
+  "entity_type": "meter",
+  "expected_decision": "RECOMMEND_STAGGER_STARTS",
+  "issue_type": "PEAK_DEMAND_SPIKE",
+  "machine_id": "",
+  "magnitude": "25.027",
+  "magnitude_unit": "kW",
+  "meter_id": "MTR-P01-001",
+  "plant_id": "P01",
+  "rule_id": "R-PEAK-01",
+  "start_ts_utc": "2026-07-11T00:30:00Z",
+  "truth_id": "GT-000014"
+ },
+ {
+  "details": {
+   "missing_intervals": 29
+  },
+  "end_ts_utc": "2026-07-04T05:30:00Z",
+  "entity_id": "MTR-P02-001",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "",
+  "magnitude": "395.763",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-001",
+  "plant_id": "P02",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-03T22:15:00Z",
+  "truth_id": "GT-000015"
+ },
+ {
+  "details": {
+   "missing_intervals": 6
+  },
+  "end_ts_utc": "2026-07-04T10:00:00Z",
+  "entity_id": "MTR-P01-004",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "MCH-P01-003",
+  "magnitude": "1.244",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-004",
+  "plant_id": "P01",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-04T08:30:00Z",
+  "truth_id": "GT-000016"
+ },
+ {
+  "details": {
+   "missing_intervals": 17
+  },
+  "end_ts_utc": "2026-07-04T17:30:00Z",
+  "entity_id": "MTR-P01-003",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "MCH-P01-002",
+  "magnitude": "3.388",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-003",
+  "plant_id": "P01",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-04T13:15:00Z",
+  "truth_id": "GT-000017"
+ },
+ {
+  "details": {
+   "missing_intervals": 18
+  },
+  "end_ts_utc": "2026-07-05T17:15:00Z",
+  "entity_id": "MTR-P02-001",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "",
+  "magnitude": "106.472",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-001",
+  "plant_id": "P02",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-05T12:45:00Z",
+  "truth_id": "GT-000018"
+ },
+ {
+  "details": {
+   "missing_intervals": 37
+  },
+  "end_ts_utc": "2026-07-06T01:15:00Z",
+  "entity_id": "MTR-P01-004",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "MCH-P01-003",
+  "magnitude": "18.25",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-004",
+  "plant_id": "P01",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-05T16:00:00Z",
+  "truth_id": "GT-000019"
+ },
+ {
+  "details": {
+   "missing_intervals": 12
+  },
+  "end_ts_utc": "2026-07-06T09:45:00Z",
+  "entity_id": "MTR-P02-004",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "MCH-P02-003",
+  "magnitude": "36.815",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-004",
+  "plant_id": "P02",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-06T06:45:00Z",
+  "truth_id": "GT-000020"
+ },
+ {
+  "details": {
+   "missing_intervals": 3
+  },
+  "end_ts_utc": "2026-07-07T12:00:00Z",
+  "entity_id": "MTR-P02-004",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "MCH-P02-003",
+  "magnitude": "1.203",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-004",
+  "plant_id": "P02",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-07T11:15:00Z",
+  "truth_id": "GT-000021"
+ },
+ {
+  "details": {
+   "missing_intervals": 7
+  },
+  "end_ts_utc": "2026-07-08T08:15:00Z",
+  "entity_id": "MTR-P02-002",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "MCH-P02-001",
+  "magnitude": "160.67",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-002",
+  "plant_id": "P02",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-08T06:30:00Z",
+  "truth_id": "GT-000022"
+ },
+ {
+  "details": {
+   "missing_intervals": 11
+  },
+  "end_ts_utc": "2026-07-08T13:30:00Z",
+  "entity_id": "MTR-P01-002",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "MCH-P01-001",
+  "magnitude": "12.072",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-002",
+  "plant_id": "P01",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-08T10:45:00Z",
+  "truth_id": "GT-000023"
+ },
+ {
+  "details": {
+   "missing_intervals": 26
+  },
+  "end_ts_utc": "2026-07-10T18:00:00Z",
+  "entity_id": "MTR-P02-003",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "MCH-P02-002",
+  "magnitude": "542.83",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-003",
+  "plant_id": "P02",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-10T11:30:00Z",
+  "truth_id": "GT-000024"
+ },
+ {
+  "details": {
+   "missing_intervals": 38
+  },
+  "end_ts_utc": "2026-07-11T13:00:00Z",
+  "entity_id": "MTR-P01-001",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "",
+  "magnitude": "769.761",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-001",
+  "plant_id": "P01",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-11T03:30:00Z",
+  "truth_id": "GT-000025"
+ },
+ {
+  "details": {
+   "missing_intervals": 2
+  },
+  "end_ts_utc": "2026-07-13T08:00:00Z",
+  "entity_id": "MTR-P02-003",
+  "entity_type": "meter",
+  "expected_decision": "FLAG_MISSING_INTERVALS_EXCLUDE_FROM_INTENSITY",
+  "issue_type": "METER_GAP",
+  "machine_id": "MCH-P02-002",
+  "magnitude": "40.598",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-003",
+  "plant_id": "P02",
+  "rule_id": "R-GAP-01",
+  "start_ts_utc": "2026-07-13T07:30:00Z",
+  "truth_id": "GT-000026"
+ },
+ {
+  "details": {
+   "register_kwh": 1009.085,
+   "true_total_kwh": 1062.982
+  },
+  "end_ts_utc": "2026-07-04T18:30:00Z",
+  "entity_id": "MDT-MTR-P01-001-20260704",
+  "entity_type": "meter_daily_total",
+  "expected_decision": "TRUST_INTERVAL_SUM_FLAG_REGISTER",
+  "issue_type": "METER_TOTAL_MISMATCH",
+  "machine_id": "",
+  "magnitude": "-53.897",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-001",
+  "plant_id": "P01",
+  "rule_id": "R-TOT-01",
+  "start_ts_utc": "2026-07-03T18:30:00Z",
+  "truth_id": "GT-000027"
+ },
+ {
+  "details": {
+   "register_kwh": 354.314,
+   "true_total_kwh": 340.171
+  },
+  "end_ts_utc": "2026-07-10T18:30:00Z",
+  "entity_id": "MDT-MTR-P01-002-20260710",
+  "entity_type": "meter_daily_total",
+  "expected_decision": "TRUST_INTERVAL_SUM_FLAG_REGISTER",
+  "issue_type": "METER_TOTAL_MISMATCH",
+  "machine_id": "MCH-P01-001",
+  "magnitude": "14.143",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-002",
+  "plant_id": "P01",
+  "rule_id": "R-TOT-01",
+  "start_ts_utc": "2026-07-09T18:30:00Z",
+  "truth_id": "GT-000028"
+ },
+ {
+  "details": {
+   "avg_kw": 9.981,
+   "recorded_energy_kwh": 9.981,
+   "true_energy_kwh": 2.495
+  },
+  "end_ts_utc": "2026-07-01T08:15:00Z",
+  "entity_id": "ENG-MTR-P02-004-20260701T080000Z",
+  "entity_type": "energy_reading",
+  "expected_decision": "RECOMPUTE_ENERGY_FROM_AVG_KW",
+  "issue_type": "KW_KWH_CONFUSION",
+  "machine_id": "MCH-P02-003",
+  "magnitude": "7.486",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-004",
+  "plant_id": "P02",
+  "rule_id": "R-UNIT-01",
+  "start_ts_utc": "2026-07-01T08:00:00Z",
+  "truth_id": "GT-000029"
+ },
+ {
+  "details": {
+   "avg_kw": 20.112,
+   "recorded_energy_kwh": 20.112,
+   "true_energy_kwh": 5.028
+  },
+  "end_ts_utc": "2026-07-12T20:00:00Z",
+  "entity_id": "ENG-MTR-P02-001-20260712T194500Z",
+  "entity_type": "energy_reading",
+  "expected_decision": "RECOMPUTE_ENERGY_FROM_AVG_KW",
+  "issue_type": "KW_KWH_CONFUSION",
+  "machine_id": "",
+  "magnitude": "15.084",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-001",
+  "plant_id": "P02",
+  "rule_id": "R-UNIT-01",
+  "start_ts_utc": "2026-07-12T19:45:00Z",
+  "truth_id": "GT-000030"
+ },
+ {
+  "details": {
+   "declared_timezone": "UTC",
+   "main_meter_cost_delta_if_uncorrected": -543.16,
+   "plant_timezone": "Asia/Dubai",
+   "tariff_ids": [
+    "TAR-2026-028",
+    "TAR-2026-029",
+    "TAR-2026-030",
+    "TAR-2026-031",
+    "TAR-2026-032",
+    "TAR-2026-033",
+    "TAR-2026-034",
+    "TAR-2026-035",
+    "TAR-2026-036"
+   ]
+  },
+  "end_ts_utc": "2026-07-14T20:00:00Z",
+  "entity_id": "TAR-2026-028,TAR-2026-029,TAR-2026-030,TAR-2026-031,TAR-2026-032,TAR-2026-033,TAR-2026-034,TAR-2026-035,TAR-2026-036",
+  "entity_type": "tariff",
+  "expected_decision": "CONVERT_TO_PLANT_LOCAL_TIME",
+  "issue_type": "TARIFF_TIMEZONE_MISMATCH",
+  "machine_id": "",
+  "magnitude": "-543.16",
+  "magnitude_unit": "AED",
+  "meter_id": "",
+  "plant_id": "P02",
+  "rule_id": "R-TZ-01",
+  "start_ts_utc": "2026-07-08T00:00:00Z",
+  "truth_id": "GT-000031"
+ },
+ {
+  "details": {
+   "conflicting_values": false,
+   "ingest_seq": 2
+  },
+  "end_ts_utc": "2026-07-01T18:00:00Z",
+  "entity_id": "ENG-MTR-P02-002-20260701T174500Z",
+  "entity_type": "energy_reading",
+  "expected_decision": "DROP_LATER_DELIVERY_KEEP_INGEST_SEQ_1",
+  "issue_type": "READING_DUPLICATE",
+  "machine_id": "MCH-P02-001",
+  "magnitude": "1",
+  "magnitude_unit": "rows",
+  "meter_id": "MTR-P02-002",
+  "plant_id": "P02",
+  "rule_id": "R-DUP-01",
+  "start_ts_utc": "2026-07-01T17:45:00Z",
+  "truth_id": "GT-000032"
+ },
+ {
+  "details": {
+   "conflicting_values": false,
+   "ingest_seq": 2
+  },
+  "end_ts_utc": "2026-07-05T17:45:00Z",
+  "entity_id": "ENG-MTR-P02-003-20260705T173000Z",
+  "entity_type": "energy_reading",
+  "expected_decision": "DROP_LATER_DELIVERY_KEEP_INGEST_SEQ_1",
+  "issue_type": "READING_DUPLICATE",
+  "machine_id": "MCH-P02-002",
+  "magnitude": "1",
+  "magnitude_unit": "rows",
+  "meter_id": "MTR-P02-003",
+  "plant_id": "P02",
+  "rule_id": "R-DUP-01",
+  "start_ts_utc": "2026-07-05T17:30:00Z",
+  "truth_id": "GT-000033"
+ },
+ {
+  "details": {
+   "conflicting_values": false,
+   "ingest_seq": 2
+  },
+  "end_ts_utc": "2026-07-09T02:00:00Z",
+  "entity_id": "ENG-MTR-P02-002-20260709T014500Z",
+  "entity_type": "energy_reading",
+  "expected_decision": "DROP_LATER_DELIVERY_KEEP_INGEST_SEQ_1",
+  "issue_type": "READING_DUPLICATE",
+  "machine_id": "MCH-P02-001",
+  "magnitude": "1",
+  "magnitude_unit": "rows",
+  "meter_id": "MTR-P02-002",
+  "plant_id": "P02",
+  "rule_id": "R-DUP-01",
+  "start_ts_utc": "2026-07-09T01:45:00Z",
+  "truth_id": "GT-000034"
+ },
+ {
+  "details": {
+   "conflicting_values": false,
+   "ingest_seq": 2
+  },
+  "end_ts_utc": "2026-07-14T00:15:00Z",
+  "entity_id": "ENG-MTR-P02-002-20260714T000000Z",
+  "entity_type": "energy_reading",
+  "expected_decision": "DROP_LATER_DELIVERY_KEEP_INGEST_SEQ_1",
+  "issue_type": "READING_DUPLICATE",
+  "machine_id": "MCH-P02-001",
+  "magnitude": "1",
+  "magnitude_unit": "rows",
+  "meter_id": "MTR-P02-002",
+  "plant_id": "P02",
+  "rule_id": "R-DUP-01",
+  "start_ts_utc": "2026-07-14T00:00:00Z",
+  "truth_id": "GT-000035"
+ },
+ {
+  "details": {
+   "expected_machine_id": "MCH-P02-002",
+   "recorded_machine_id": "MCH-P01-001"
+  },
+  "end_ts_utc": "2026-07-06T17:00:00Z",
+  "entity_id": "ENG-MTR-P02-003-20260706T164500Z",
+  "entity_type": "energy_reading",
+  "expected_decision": "REASSIGN_TO_METER_MACHINE",
+  "issue_type": "MACHINE_OUTSIDE_HIERARCHY",
+  "machine_id": "MCH-P02-002",
+  "magnitude": "1.875",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P02-003",
+  "plant_id": "P02",
+  "rule_id": "R-HIER-01",
+  "start_ts_utc": "2026-07-06T16:45:00Z",
+  "truth_id": "GT-000036"
+ },
+ {
+  "details": {
+   "expected_machine_id": "MCH-P01-003",
+   "recorded_machine_id": "MCH-P02-002"
+  },
+  "end_ts_utc": "2026-07-12T01:00:00Z",
+  "entity_id": "ENG-MTR-P01-004-20260712T004500Z",
+  "entity_type": "energy_reading",
+  "expected_decision": "REASSIGN_TO_METER_MACHINE",
+  "issue_type": "MACHINE_OUTSIDE_HIERARCHY",
+  "machine_id": "MCH-P01-003",
+  "magnitude": "0.19",
+  "magnitude_unit": "kWh",
+  "meter_id": "MTR-P01-004",
+  "plant_id": "P01",
+  "rule_id": "R-HIER-01",
+  "start_ts_utc": "2026-07-12T00:45:00Z",
+  "truth_id": "GT-000037"
+ }
+]
