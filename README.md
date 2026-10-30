@@ -96,7 +96,7 @@ Full field-level dictionary (type, required, allowed values, units, uniqueness, 
   `REC-R3-PEAK` (≥2 days above contract demand; saving = excess kW x demand charge). Status history is stored as events.
 
 ## Validation (137 checks) and evidence
-`reports/validation_summary.md` per dataset. Covers primary-key uniqueness, FK integrity (all 30+ relationships), enums, ID patterns,
+`reports/validation_summary.md` per dataset. Covers primary-key uniqueness, FK integrity (all 24 foreign keys), enums, ID patterns,
 required fields/types, date ordering, tariff tiling, batch/machine overlap, lifecycle transitions (batch, maintenance, recommendation,
 machine state), energy reconciliation (register vs intervals, MAIN ≥ Σ SUB, cost = energy x rate with an **independent** plant-local tariff scan,
 intensity = energy/units) and duplicates. Each violation is classified **labelled** (matches a ground-truth row) or **unexplained**;
