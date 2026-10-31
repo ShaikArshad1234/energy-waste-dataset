@@ -1,0 +1,330 @@
+<title>Plant Energy Dashboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column of chart cards under a KPI strip; two plants carry fixed colors (P01 blue, P02 orange) in every chart. */
+:root {
+  --page: #eceef0;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --ink-3: #6f6e69;
+  --line: #dcdedf;
+  --grid: #e6e7e6;
+  --s1: #2a78d6;   /* P01 */
+  --s2: #eb6834;   /* P02 */
+  --neutral: #8a8984;
+  --detect: #6250d6;
+  --shade: rgba(98, 80, 214, 0.10);
+  --font: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #101211; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #a09f95;
+    --line: #2d2f2e; --grid: #292b2a; --s1: #3987e5; --s2: #d95926; --neutral: #8f8e86;
+    --detect: #9085e9; --shade: rgba(144, 133, 233, 0.14); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #101211; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #a09f95;
+  --line: #2d2f2e; --grid: #292b2a; --s1: #3987e5; --s2: #d95926; --neutral: #8f8e86;
+  --detect: #9085e9; --shade: rgba(144, 133, 233, 0.14); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--page); color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.5;
+  padding-block: 28px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+header h1 { font-size: clamp(26px, 4.4vw, 38px); line-height: 1.1; margin: 0 0 6px; font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+header p { margin: 0; color: var(--ink-2); max-width: 70ch; }
+.meta { margin-top: 10px; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+.kpi b { display: block; font-family: var(--mono); font-weight: 500; font-size: 24px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.kpi span { font-size: 12px; color: var(--ink-2); text-transform: uppercase; letter-spacing: 0.06em; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px 16px; min-width: 0; }
+.card h2 { margin: 0 0 2px; font-size: 17px; font-weight: 600; }
+.card .sub { margin: 0 0 12px; color: var(--ink-2); font-size: 13.5px; max-width: 75ch; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 820px) { .pair { grid-template-columns: 1fr; } }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-bottom: 8px; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; color: var(--ink-2); }
+.legend i { display: inline-block; width: 12px; height: 3px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+.legend i.sq { height: 10px; width: 10px; border-radius: 2px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg button { font: inherit; font-size: 13px; padding: 5px 12px; background: transparent; color: var(--ink-2); border: 0; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+.seg button:focus-visible, select:focus-visible { outline: 2px solid var(--detect); outline-offset: 1px; }
+select { font: inherit; font-size: 13px; padding: 5px 8px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; }
+.chart { position: relative; width: 100%; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.tick { fill: var(--ink-3); font-family: var(--mono); font-size: 11px; }
+.axis-title { fill: var(--ink-3); font-size: 11px; }
+.gridline { stroke: var(--grid); stroke-width: 1; }
+.lbl { font-size: 12px; font-weight: 600; }
+.tip { position: absolute; pointer-events: none; z-index: 5; background: var(--surface); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 6px; padding: 7px 10px; font-size: 12.5px; box-shadow: 0 4px 14px rgba(0,0,0,0.14); white-space: nowrap; display: none; }
+.tip b { font-weight: 600; }
+.tip .r { display: flex; gap: 14px; justify-content: space-between; font-variant-numeric: tabular-nums; }
+.bars { display: flex; flex-direction: column; gap: 10px; }
+.bar-row { display: grid; grid-template-columns: minmax(96px, 190px) 1fr; gap: 10px; align-items: center; }
+.bar-row .name { font-size: 13px; color: var(--ink); overflow-wrap: anywhere; }
+.bar-row .name small { display: block; color: var(--ink-3); font-size: 11.5px; }
+.track { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.bar { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.bar i { display: block; height: 10px; border-radius: 0 4px 4px 0; min-width: 2px; }
+.bar em { white-space: nowrap; font-style: normal; font-family: var(--mono); font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.note { margin: 12px 0 0; color: var(--ink-3); font-size: 12.5px; max-width: 80ch; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; min-width: 720px; }
+th { text-align: left; font-weight: 600; color: var(--ink-2); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 10px; border-bottom: 1px solid var(--line); }
+td { padding: 8px 10px; border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; }
+td.num, th.num { text-align: right; }
+.pill { display: inline-block; font-size: 11.5px; padding: 1px 8px; border-radius: 10px; border: 1px solid var(--line); color: var(--ink-2); }
+.pill.IMPLEMENTED { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.pill.ACCEPTED { border-color: var(--ink-2); color: var(--ink); }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+footer { color: var(--ink-3); font-size: 12.5px; max-width: 80ch; }
+@media (prefers-reduced-motion: no-preference) { .bar i { transition: width .3s ease; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Plant Energy Dashboard</h1>
+    <p>Synthetic telemetry for two plants over 90 days: where energy goes, when demand breaches the contract, and which machines waste power. Every anomaly shown was injected on purpose and labelled in the ground truth.</p>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="card">
+    <h2>Daily energy by plant</h2>
+    <p class="sub">Daily total from each plant's main incomer meter register, in kWh.</p>
+    <div class="toolbar"><div class="legend" id="lg-energy"></div></div>
+    <div class="chart" id="c-energy"></div>
+  </section>
+
+  <section class="card">
+    <h2>Peak demand against contract</h2>
+    <p class="sub">Highest 15-minute demand of each local day on the main meter. Filled dots mark days above the contract demand.</p>
+    <div class="toolbar"><div class="seg" id="seg-peak" role="group" aria-label="Plant"></div><div class="legend" id="lg-peak"></div></div>
+    <div class="chart" id="c-peak"></div>
+  </section>
+
+  <div class="pair">
+    <section class="card">
+      <h2>Anomalies: labelled and detected</h2>
+      <p class="sub">What the generator injected, against what the pipeline found from source data alone.</p>
+      <div class="legend" style="margin-bottom:10px"><span><i class="sq" style="background:var(--neutral)"></i>Labelled</span><span><i class="sq" style="background:var(--detect)"></i>Detected</span></div>
+      <div class="bars chart" id="c-anom"></div>
+      <p class="note">Counts use different units for some types. Idle and intensity findings are per machine-day or machine-week, while a label can cover a longer period. Hover a row for recall.</p>
+    </section>
+    <section class="card">
+      <h2>Idle waste by machine</h2>
+      <p class="sub">Off-shift energy above standby level, summed over the flagged days.</p>
+      <div class="bars chart" id="c-idle"></div>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Energy intensity drift</h2>
+    <p class="sub">Each dot is one batch: its kWh per unit divided by the same machine and product in the first two weeks. Shaded band is the labelled drift period.</p>
+    <div class="toolbar"><label for="sel-int" style="font-size:13px;color:var(--ink-2)">Machine</label><select id="sel-int"></select><div class="legend" id="lg-int"></div></div>
+    <div class="chart" id="c-int"></div>
+  </section>
+
+  <section class="card">
+    <h2>Recommendations</h2>
+    <p class="sub">Generated from measured data only. Savings are per 30 days with a 90% capture factor.</p>
+    <div class="tablewrap" id="t-recs"></div>
+  </section>
+
+  <footer>Detection scores are high because the detector rules and the labels share the same logic. They show the pipeline is consistent, not that it would hold on real meters. Rebuild this page with <code>python scripts/build_dashboard.py</code>.</footer>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+(function () {
+  const NS = "http://www.w3.org/2000/svg";
+  const PCOL = { P01: "var(--s1)", P02: "var(--s2)" };
+  const PNAME = {}; Object.keys(DATA.plants).forEach(k => PNAME[k] = DATA.plants[k].name);
+  const fmt = n => Math.round(n).toLocaleString("en-US");
+  const DAY = 86400000;
+  const dlabel = t => new Date(t).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+  const dfull = t => new Date(t).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+  const pd = s => Date.parse(s + "T00:00:00Z");
+  const $ = id => document.getElementById(id);
+  const mk = (tag, at, parent) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (parent) parent.appendChild(e); return e; };
+  const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+  function niceMax(max, n) {
+    const raw = max / n, p = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / p;
+    const step = (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10) * p, t = [];
+    for (let v = 0; v <= Math.ceil(max / step) * step + 1e-9; v += step) t.push(v);
+    return t;
+  }
+  function monthTicks(a, b) {
+    const out = [], d = new Date(a); d.setUTCDate(1);
+    for (let t = d.getTime(); t <= b; ) {
+      [1, 15].forEach(day => { const x = Date.UTC(new Date(t).getUTCFullYear(), new Date(t).getUTCMonth(), day); if (x >= a && x <= b) out.push(x); });
+      const n = new Date(t); n.setUTCMonth(n.getUTCMonth() + 1); t = n.getTime();
+    }
+    return out;
+  }
+
+  // tooltip helper, one per chart host
+  function tipFor(host) {
+    let t = host.querySelector(".tip");
+    if (!t) { t = document.createElement("div"); t.className = "tip"; host.appendChild(t); }
+    return {
+      show(html, x, y) {
+        t.innerHTML = html; t.style.display = "block";
+        const w = t.offsetWidth, W = host.clientWidth;
+        t.style.left = Math.max(0, Math.min(W - w, x + 12)) + "px"; t.style.top = Math.max(0, y - 10) + "px";
+      },
+      hide() { t.style.display = "none"; }
+    };
+  }
+
+  // generic frame: returns scales and svg
+  function frame(host, o) {
+    host.innerHTML = "";
+    const W = Math.max(280, host.clientWidth), H = o.h || 280, m = { l: 46, r: o.right || 18, t: 10, b: 28 };
+    const svg = mk("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": o.label }, host);
+    const sx = v => m.l + (v - o.x0) / (o.x1 - o.x0) * (W - m.l - m.r);
+    const sy = v => H - m.b - (v - o.y0) / (o.y1 - o.y0) * (H - m.t - m.b);
+    (o.yticks).forEach(v => {
+      mk("line", { x1: m.l, x2: W - m.r, y1: sy(v), y2: sy(v), class: "gridline" }, svg);
+      const t = mk("text", { x: m.l - 8, y: sy(v) + 4, "text-anchor": "end", class: "tick" }, svg); t.textContent = o.yfmt ? o.yfmt(v) : fmt(v);
+    });
+    monthTicks(o.x0, o.x1).forEach(v => {
+      const t = mk("text", { x: sx(v), y: H - 8, "text-anchor": "middle", class: "tick" }, svg); t.textContent = dlabel(v);
+    });
+    if (o.ytitle) { const t = mk("text", { x: m.l, y: m.t - 1, class: "axis-title" }, svg); t.textContent = o.ytitle; t.setAttribute("dy", "-1"); }
+    return { svg, sx, sy, W, H, m };
+  }
+
+  /* ---------- KPIs ---------- */
+  const k = DATA.kpi;
+  $("kpis").innerHTML = [
+    [fmt(k.readings), "15-min readings"], [fmt(k.batches), "Production batches"], [fmt(k.labelled), "Labelled anomalies"],
+    [k.passed + "/" + k.checks, "Validation checks"], [fmt(k.unexplained), "Unexplained violations"]
+  ].map(r => `<div class="kpi"><b>${r[0]}</b><span>${r[1]}</span></div>`).join("");
+  $("meta").textContent = Object.keys(DATA.plants).map(p => p + " " + PNAME[p] + " (" + DATA.plants[p].currency + ")").join("  ·  ");
+
+  /* ---------- Daily energy ---------- */
+  const plants = Object.keys(DATA.energy);
+  $("lg-energy").innerHTML = plants.map(p => `<span><i style="background:${PCOL[p]}"></i>${p} ${esc(PNAME[p])}</span>`).join("");
+  function drawEnergy() {
+    const host = $("c-energy"), all = [];
+    const maps = {}; plants.forEach(p => { maps[p] = {}; DATA.energy[p].forEach(r => { const t = pd(r[0]); maps[p][t] = r[1]; all.push([t, r[1]]); }); });
+    const xs = [...new Set(all.map(a => a[0]))].sort((a, b) => a - b);
+    const ymax = Math.max(...all.map(a => a[1])), yt = niceMax(ymax, 4);
+    const f = frame(host, { x0: xs[0], x1: xs[xs.length - 1], y0: 0, y1: yt[yt.length - 1], yticks: yt, label: "Daily energy by plant", ytitle: "kWh per day", right: 56 });
+    plants.forEach(p => {
+      const pts = xs.filter(t => maps[p][t] != null).map(t => [f.sx(t), f.sy(maps[p][t])]);
+      mk("path", { d: "M" + pts.map(q => q.join(",")).join("L"), fill: "none", style: `stroke:${PCOL[p]}`, "stroke-width": 2, "stroke-linejoin": "round" }, f.svg);
+      const last = pts[pts.length - 1], tx = mk("text", { x: last[0] + 6, y: last[1] + 4, class: "lbl", style: "fill:var(--ink)" }, f.svg); tx.textContent = p;
+    });
+    const cur = mk("line", { y1: f.m.t, y2: f.H - f.m.b, style: "stroke:var(--ink-3)", "stroke-width": 1, visibility: "hidden" }, f.svg);
+    const dots = plants.map(p => mk("circle", { r: 4.5, style: `fill:${PCOL[p]};stroke:var(--surface)`, "stroke-width": 2, visibility: "hidden" }, f.svg));
+    const tip = tipFor(host), ov = mk("rect", { x: f.m.l, y: f.m.t, width: f.W - f.m.l - f.m.r, height: f.H - f.m.t - f.m.b, fill: "transparent" }, f.svg);
+    ov.addEventListener("pointermove", e => {
+      const r = f.svg.getBoundingClientRect(), px = (e.clientX - r.left) * f.W / r.width;
+      let best = xs[0]; xs.forEach(t => { if (Math.abs(f.sx(t) - px) < Math.abs(f.sx(best) - px)) best = t; });
+      cur.setAttribute("x1", f.sx(best)); cur.setAttribute("x2", f.sx(best)); cur.setAttribute("visibility", "visible");
+      let h = `<b>${dfull(best)}</b>`;
+      plants.forEach((p, i) => { const v = maps[p][best]; if (v == null) { dots[i].setAttribute("visibility", "hidden"); return; }
+        dots[i].setAttribute("cx", f.sx(best)); dots[i].setAttribute("cy", f.sy(v)); dots[i].setAttribute("visibility", "visible");
+        h += `<div class="r"><span><span class="dot" style="background:${PCOL[p]}"></span>${p}</span><span>${fmt(v)} kWh</span></div>`; });
+      tip.show(h, f.sx(best), 20);
+    });
+    ov.addEventListener("pointerleave", () => { tip.hide(); cur.setAttribute("visibility", "hidden"); dots.forEach(d => d.setAttribute("visibility", "hidden")); });
+  }
+
+  /* ---------- Peak demand ---------- */
+  let peakPlant = Object.keys(DATA.peak)[0];
+  const seg = $("seg-peak");
+  Object.keys(DATA.peak).forEach(p => { const b = document.createElement("button"); b.textContent = p + " " + PNAME[p]; b.dataset.p = p; b.setAttribute("aria-pressed", p === peakPlant);
+    b.onclick = () => { peakPlant = p; [...seg.children].forEach(c => c.setAttribute("aria-pressed", c.dataset.p === p)); drawPeak(); }; seg.appendChild(b); });
+  function drawPeak() {
+    const host = $("c-peak"), rows = DATA.peak[peakPlant], col = PCOL[peakPlant], contract = rows[0][2];
+    const over = rows.filter(r => r[1] > r[2]);
+    $("lg-peak").innerHTML = `<span><i style="background:${col}"></i>Daily peak kW</span><span><i style="background:var(--ink-2);height:0;border-top:2px dashed var(--ink-2)"></i>Contract ${fmt(contract)} kW</span><span>${over.length} of ${rows.length} days above contract</span>`;
+    const xs = rows.map(r => pd(r[0])), ymax = Math.max(contract, ...rows.map(r => r[1])) * 1.04, yt = niceMax(ymax, 4);
+    const f = frame(host, { x0: xs[0], x1: xs[xs.length - 1], y0: 0, y1: yt[yt.length - 1], yticks: yt, label: "Daily peak demand for " + peakPlant, ytitle: "kW", right: 20 });
+    mk("line", { x1: f.m.l, x2: f.W - f.m.r, y1: f.sy(contract), y2: f.sy(contract), style: "stroke:var(--ink-2)", "stroke-width": 1.5, "stroke-dasharray": "6 4" }, f.svg);
+    mk("path", { d: "M" + rows.map((r, i) => f.sx(xs[i]) + "," + f.sy(r[1])).join("L"), fill: "none", style: `stroke:${col}`, "stroke-width": 2, "stroke-linejoin": "round" }, f.svg);
+    rows.forEach((r, i) => { if (r[1] > r[2]) mk("circle", { cx: f.sx(xs[i]), cy: f.sy(r[1]), r: 4.5, style: `fill:${col};stroke:var(--surface)`, "stroke-width": 2 }, f.svg); });
+    const cur = mk("line", { y1: f.m.t, y2: f.H - f.m.b, style: "stroke:var(--ink-3)", "stroke-width": 1, visibility: "hidden" }, f.svg);
+    const tip = tipFor(host), ov = mk("rect", { x: f.m.l, y: f.m.t, width: f.W - f.m.l - f.m.r, height: f.H - f.m.t - f.m.b, fill: "transparent" }, f.svg);
+    ov.addEventListener("pointermove", e => {
+      const r = f.svg.getBoundingClientRect(), px = (e.clientX - r.left) * f.W / r.width; let bi = 0;
+      xs.forEach((t, i) => { if (Math.abs(f.sx(t) - px) < Math.abs(f.sx(xs[bi]) - px)) bi = i; });
+      const q = rows[bi]; cur.setAttribute("x1", f.sx(xs[bi])); cur.setAttribute("x2", f.sx(xs[bi])); cur.setAttribute("visibility", "visible");
+      tip.show(`<b>${dfull(xs[bi])}</b><div class="r"><span>Peak</span><span>${fmt(q[1])} kW</span></div><div class="r"><span>Contract</span><span>${fmt(q[2])} kW</span></div>` +
+        (q[1] > q[2] ? `<div class="r"><span>Over by</span><span>${fmt(q[1] - q[2])} kW</span></div>` : ""), f.sx(xs[bi]), 20);
+    });
+    ov.addEventListener("pointerleave", () => { tip.hide(); cur.setAttribute("visibility", "hidden"); });
+  }
+
+  /* ---------- Anomaly bars ---------- */
+  function drawAnom() {
+    const host = $("c-anom"), mx = Math.max(...DATA.anomalies.map(a => Math.max(a.labelled, a.detected)));
+    host.innerHTML = DATA.anomalies.map((a, i) => `<div class="bar-row" data-i="${i}"><div class="name">${a.type.replace(/_/g, " ").toLowerCase()}</div><div class="track">
+      <div class="bar"><i style="width:${a.labelled / mx * 68}%;background:var(--neutral)"></i><em>${a.labelled}</em></div>
+      <div class="bar"><i style="width:${a.detected / mx * 68}%;background:var(--detect)"></i><em>${a.detected}</em></div></div></div>`).join("");
+    const tip = tipFor(host);
+    host.querySelectorAll(".bar-row").forEach(r => {
+      const a = DATA.anomalies[+r.dataset.i];
+      r.addEventListener("pointermove", e => { const b = host.getBoundingClientRect();
+        tip.show(`<b>${a.type}</b><div class="r"><span>Labelled</span><span>${a.labelled}</span></div><div class="r"><span>Detected</span><span>${a.detected}</span></div>` +
+          (a.recall != null ? `<div class="r"><span>Recall</span><span>${(a.recall * 100).toFixed(1)}%</span></div>` : "") + (a.grain ? `<div style="color:var(--ink-3)">${esc(a.grain)}</div>` : ""), e.clientX - b.left, e.clientY - b.top); });
+      r.addEventListener("pointerleave", () => tip.hide());
+    });
+  }
+
+  /* ---------- Idle bars ---------- */
+  function drawIdle() {
+    const host = $("c-idle"), mx = Math.max(...DATA.idle.map(a => a.kwh));
+    host.innerHTML = DATA.idle.map(a => `<div class="bar-row"><div class="name">${a.machine}<small>${a.plant} · ${a.days} days flagged</small></div><div class="track">
+      <div class="bar"><i style="width:${a.kwh / mx * 68}%;background:${PCOL[a.plant]}"></i><em>${fmt(a.kwh)} kWh</em></div></div></div>`).join("");
+  }
+
+  /* ---------- Intensity ---------- */
+  const sel = $("sel-int"); Object.keys(DATA.intensity).sort().forEach(m => { const o = document.createElement("option"); o.value = o.textContent = m; sel.appendChild(o); });
+  sel.onchange = drawInt;
+  function drawInt() {
+    const host = $("c-int"), m = sel.value, pts = DATA.intensity[m], plant = m.split("-")[1], col = PCOL[plant], win = DATA.shifts[m];
+    $("lg-int").innerHTML = `<span><i style="background:${col};height:8px;width:8px;border-radius:50%"></i>Batch</span><span><i style="background:var(--ink-2);height:0;border-top:2px dashed var(--ink-2)"></i>Alert level 1.12×</span>`;
+    const x0 = Math.min(...pts.map(p => p[0])), x1 = Math.max(...pts.map(p => p[0])), ymax = Math.max(1.4, ...pts.map(p => p[1])) * 1.03, yt = [0, 0.5, 1, 1.5, 2].filter(v => v <= ymax + 0.5);
+    const f = frame(host, { x0, x1, y0: 0.4, y1: yt[yt.length - 1] >= ymax ? yt[yt.length - 1] : ymax, yticks: yt.filter(v => v >= 0.5), yfmt: v => v.toFixed(1) + "×", label: "Energy intensity index for " + m, ytitle: "kWh per unit vs baseline" });
+    if (win) { const a = f.sx(Math.max(win[0], x0)), b = f.sx(Math.min(win[1], x1)); mk("rect", { x: a, y: f.m.t, width: Math.max(0, b - a), height: f.H - f.m.t - f.m.b, style: "fill:var(--shade)" }, f.svg); }
+    mk("line", { x1: f.m.l, x2: f.W - f.m.r, y1: f.sy(1), y2: f.sy(1), style: "stroke:var(--ink-3)", "stroke-width": 1 }, f.svg);
+    mk("line", { x1: f.m.l, x2: f.W - f.m.r, y1: f.sy(1.12), y2: f.sy(1.12), style: "stroke:var(--ink-2)", "stroke-width": 1.5, "stroke-dasharray": "6 4" }, f.svg);
+    const xy = pts.map(p => [f.sx(p[0]), f.sy(p[1])]);
+    xy.forEach(q => mk("circle", { cx: q[0], cy: q[1], r: 3.5, style: `fill:${col};stroke:var(--surface)`, "stroke-width": 1 }, f.svg));
+    const tip = tipFor(host), ov = mk("rect", { x: f.m.l, y: f.m.t, width: f.W - f.m.l - f.m.r, height: f.H - f.m.t - f.m.b, fill: "transparent" }, f.svg), ring = mk("circle", { r: 6.5, fill: "none", style: "stroke:var(--ink)", "stroke-width": 1.5, visibility: "hidden" }, f.svg);
+    ov.addEventListener("pointermove", e => {
+      const r = f.svg.getBoundingClientRect(), px = (e.clientX - r.left) * f.W / r.width, py = (e.clientY - r.top) * f.H / r.height; let bi = -1, bd = 22 * 22;
+      xy.forEach((q, i) => { const d = (q[0] - px) ** 2 + (q[1] - py) ** 2; if (d < bd) { bd = d; bi = i; } });
+      if (bi < 0) { tip.hide(); ring.setAttribute("visibility", "hidden"); return; }
+      const p = pts[bi]; ring.setAttribute("cx", xy[bi][0]); ring.setAttribute("cy", xy[bi][1]); ring.setAttribute("visibility", "visible");
+      tip.show(`<b>${p[2]}</b><div class="r"><span>Product</span><span>${p[3]}</span></div><div class="r"><span>kWh per unit</span><span>${p[4]}</span></div><div class="r"><span>Index</span><span>${p[1].toFixed(2)}×</span></div><div style="color:var(--ink-3)">${dfull(p[0])}</div>`, xy[bi][0], xy[bi][1]);
+    });
+    ov.addEventListener("pointerleave", () => { tip.hide(); ring.setAttribute("visibility", "hidden"); });
+  }
+
+  /* ---------- Recommendations ---------- */
+  function drawRecs() {
+    const label = { "REC-R1-IDLE": "Cut idle load off-shift", "REC-R2-INTENSITY": "Inspect machine intensity", "REC-R3-PEAK": "Stagger starts to cut peak" };
+    $("t-recs").innerHTML = `<table><thead><tr><th>Created</th><th>Plant</th><th>Target</th><th>Rule</th><th>Status</th><th class="num">Saving / 30 days</th><th class="num">Cost saving</th></tr></thead><tbody>` +
+      DATA.recs.map(r => `<tr><td>${r.created}</td><td><span class="dot" style="background:${PCOL[r.plant]}"></span>${r.plant}</td><td>${r.machine || "Main meter"}</td><td>${label[r.rule] || r.rule}</td>
+      <td><span class="pill ${r.status}">${r.status.toLowerCase()}</span></td><td class="num">${r.kw != null ? fmt(r.kw) + " kW" : fmt(r.kwh) + " kWh"}</td><td class="num">${r.cur} ${fmt(r.cost)}</td></tr>`).join("") + `</tbody></table>`;
+  }
+
+  function all() { drawEnergy(); drawPeak(); drawAnom(); drawIdle(); drawInt(); drawRecs(); }
+  all();
+  let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { drawEnergy(); drawPeak(); drawInt(); }, 120); });
+})();
+</script>
