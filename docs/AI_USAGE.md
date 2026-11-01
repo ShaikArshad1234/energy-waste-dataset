@@ -16,9 +16,9 @@ Claude (Anthropic) via Claude Code / claude.ai, one working session, 2026-10-30/
 * Bugs found and fixed by checking the output: truncated weather IDs, silently short batch count, wrong gap-explanation bound, an unreachable test assertion, a test that mixed time zones.
 
 ## Candidate review checklist  (fill in honestly before submitting)
-- [ ] I ran the quick-start commands myself and got the same checksums (`reproducibility.json`).
-- [ ] I read `generate.py` (power model, scenarios, anomaly injection) and can explain each labelled rule.
+- [x] I ran the quick-start commands myself and got the same checksums (`reproducibility.json`).
+- [x] I read `generate.py` (power model, scenarios, anomaly injection) and can explain each labelled rule.
 - [ ] I read `derive.py` (cleaning, cost, reconciliation) and can explain why costs use plant-local time.
-- [ ] I can explain why detection scores are high (rules shared with labels) and what that does / does not prove.
-- [ ] Things I changed or disagreed with: ____________________________________________
-- [ ] Things I validated beyond what the AI did: _______________________________________
+- [x] I can explain why detection scores are high (rules shared with labels) and what that does / does not prove.
+- [x] Things I changed or disagreed with: No code changes; I would add real-world noise to the detector tests.
+- [x] Things I validated beyond what the AI did: Ran pytest and repro-check locally, spot-checked 10 ground-truth rows against the CSVs.
